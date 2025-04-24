@@ -5,6 +5,7 @@ import static com.jfrog.ide.eclipse.ui.UiUtils.setGridLayout;
 
 import org.apache.commons.lang3.StringUtils;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.browser.Browser;
 import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
@@ -30,6 +31,7 @@ public abstract class ComponentDetails extends Panel {
 	private ScrolledComposite scrolledComposite;
 	private Hyperlink credentialsConfigLink;
 	private String title;
+	private Browser browser;
 
 	public ComponentDetails(Composite parent, String title) {
 		super(parent);
@@ -126,5 +128,21 @@ public abstract class ComponentDetails extends Panel {
 		layout(true, true);
 		componentDetailsPanel.pack();
 	}
+	
+    private void createBrowser(Composite parent) {
+        try {
+            // Initialize the browser
+            browser = new Browser(parent, SWT.NONE);
+
+            // Set the size and layout for the browser
+            browser.setBounds(10, 10, 800, 600); // Adjust dimensions as needed
+
+            // Load a URL or HTML content
+            browser.setUrl("https://www.jfrog.com"); // Replace with your desired URL
+            // browser.setText("<html><body><h1>Hello, Browser!</h1></body></html>"); // For custom HTML content
+        } catch (Exception e) {
+            System.err.println("Failed to initialize browser: " + e.getMessage());
+        }
+    }
 
 }
