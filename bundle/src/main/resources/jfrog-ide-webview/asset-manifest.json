@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "./static/css/main.71961506.css",
+    "main.js": "./static/js/main.baab9517.js",
+    "static/media/OverpassMono-Regular.ttf": "./static/media/OverpassMono-Regular.6dbfb00e3133f6d0159a.ttf",
+    "static/media/OverpassMono-SemiBold.ttf": "./static/media/OverpassMono-SemiBold.f20c8daafc3a6f26334d.ttf",
+    "static/media/OverpassMono-Bold.ttf": "./static/media/OverpassMono-Bold.9b086279a5cfd96b2dbb.ttf",
+    "static/media/OpenSans-Bold.ttf": "./static/media/OpenSans-Bold.45847e90261782dc01a6.ttf",
+    "static/media/OpenSans-Regular.ttf": "./static/media/OpenSans-Regular.9a6cfa5890d7f3eef585.ttf",
+    "static/media/OpenSans-SemiBold.ttf": "./static/media/OpenSans-SemiBold.dcf2e322dbaa037ca821.ttf",
+    "static/media/missing_context.svg": "./static/media/missing_context.07c03b01498909a7c6be7e7c68302063.svg",
+    "static/media/not_applicable.svg": "./static/media/not_applicable.82206d007d3d7b3844500ddbb2a24033.svg",
+    "static/media/undetermined.svg": "./static/media/undetermined.1526216f60558126c12669132166e106.svg",
+    "static/media/not_covered.svg": "./static/media/not_covered.1fb81f90cad14889ed2f7ce1de4bb7d3.svg",
+    "static/media/applicable.svg": "./static/media/applicable.a07c5d0c1044b0c4271a521920a9eab0.svg",
+    "static/media/exploit_execution.svg": "./static/media/exploit_execution.34490b63efccb6fab2f290125727e621.svg",
+    "static/media/attacker_entry.svg": "./static/media/attacker_entry.5bb3fa078a38808d8b38281a73a61413.svg",
+    "static/media/jfrog_research_icon.svg": "./static/media/jfrog_research_icon.d3d472438c5bbdd882e3abafb85012eb.svg",
+    "static/media/critical.svg": "./static/media/critical.963ad11835bb5db93eb0073c1e3e7e05.svg",
+    "static/media/evidence.svg": "./static/media/evidence.2bc4d3b246c5755914497592fcfed244.svg",
+    "static/media/medium.svg": "./static/media/medium.e06fedb98d55841d1c730b3997d8175b.svg",
+    "static/media/info.svg": "./static/media/info.c93269660e97cafe23d9fcca9fb646a9.svg",
+    "static/media/refrence.svg": "./static/media/refrence.97770917fdc3449a3a34679b27359edc.svg",
+    "static/media/unknown.svg": "./static/media/unknown.5fd2c73f93efd96cf4b7a31053539950.svg",
+    "static/media/high.svg": "./static/media/high.59a3e852f9dd7bcb304450756e508581.svg",
+    "static/media/sad_face.svg": "./static/media/sad_face.e102993ef4a0783978b339fee7a982a0.svg",
+    "static/media/low.svg": "./static/media/low.ff55438fbcc8950c4a6be976e8f9d55c.svg",
+    "static/media/document.svg": "./static/media/document.b07f440688e46466e9aac10215e02f3c.svg",
+    "static/media/flow.svg": "./static/media/flow.5dc215f8eea9201b5233087b7fcdf5dc.svg",
+    "static/media/less_risk.svg": "./static/media/less_risk.d0f34d1a0870333c783ebb7a1bb5e177.svg",
+    "static/media/more_risk.svg": "./static/media/more_risk.ae1683a54e34c95ba652edac035fdf2b.svg",
+    "index.html": "./index.html",
+    "static/media/expand.svg": "./static/media/expand.88e81207295d18f47d0ad96dd610e226.svg",
+    "static/media/minimize.svg": "./static/media/minimize.430324268eafbeb36282b79a3f42804b.svg",
+    "static/media/chevron_green.svg": "./static/media/chevron_green.f7ec692f4d2ce05bdd5116954743a057.svg",
+    "main.71961506.css.map": "./static/css/main.71961506.css.map",
+    "main.baab9517.js.map": "./static/js/main.baab9517.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.71961506.css",
+    "static/js/main.baab9517.js"
+  ]
+}
