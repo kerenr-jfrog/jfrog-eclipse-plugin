@@ -1,6 +1,5 @@
 package com.jfrog.ide.eclipse.ui.issues;
 
-import java.awt.Color;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.browser.Browser;
@@ -60,11 +59,8 @@ public class ComponentIssueDetails extends ComponentDetails {
 	@Override
     protected void createBrowser(Composite parent) {
         try {
-        	// setting Chrome as the browser
-//        	System.setProperty("org.eclipse.swt.browser.DefaultType", "chromium");
-            
             // Initialize the browser
-            browser = new Browser(parent, SWT.NONE);
+            browser = new Browser(parent, SWT.WEBKIT);
 //            String browserType = browser.getBrowserType();
 
             // Set the size and layout for the browser
@@ -78,11 +74,15 @@ public class ComponentIssueDetails extends ComponentDetails {
             browser.addProgressListener(new ProgressListener() {
                 @Override
                 public void completed(ProgressEvent event) {
-                	runJavaScript();
+//                	runJavaScript();
                 }
-                
-                @Override
-                public void changed(ProgressEvent event) {}
+
+				@Override
+				public void changed(ProgressEvent event) {
+					// TODO Auto-generated method stub
+					
+				}
+           
             });
             
             parent.layout(true, true);
@@ -96,5 +96,4 @@ public class ComponentIssueDetails extends ComponentDetails {
         String script = "window.postMessage({type: 'SHOW_PAGE',data: {pageType: 'SECRETS',location: 'EXP-1527-00001'}},'*')";
         browser.execute(script);
     }
-
 }
