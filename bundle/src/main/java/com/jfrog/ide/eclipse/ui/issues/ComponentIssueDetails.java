@@ -1,8 +1,13 @@
 package com.jfrog.ide.eclipse.ui.issues;
 
-import java.nio.file.Paths;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.swt.widgets.Composite;
+import org.osgi.framework.Bundle;
 
 import com.jfrog.ide.common.nodes.FileIssueNode;
 import com.jfrog.ide.eclipse.log.Logger;
@@ -87,10 +92,16 @@ public class ComponentIssueDetails extends ComponentDetails {
 	}
 	
 	/**
-	 * Gets the webview URL. This method can be customized to load from different sources.
+	 * Gets the webview index.html URL as string.
 	 */
 	private String getWebviewUrl() {
-		return Paths.get(System.getProperty("user.dir"), "bundle", "src", "main", "resources", "jfrog-ide-webview", "index.html").toString();
+        try {
+            Bundle bundle = Platform.getBundle("com.jfrog.ide.eclipse"); 
+            URL webviewFileUrl = FileLocator.toFileURL(bundle.getEntry(WebviewManager.WEBVIEW_INDEX_HTML_PATH));
+            return new File(webviewFileUrl.getPath()).getAbsolutePath();
+        } catch (IOException e) {
+            throw new RuntimeException("Unable to locate Webview file: 'index.html' from plugin bundle", e);
+        }
 	}
 
 	public static void disposeComponentDetails() {

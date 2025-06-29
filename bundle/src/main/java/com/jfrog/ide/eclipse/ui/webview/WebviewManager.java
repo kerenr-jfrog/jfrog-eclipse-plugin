@@ -23,6 +23,7 @@ import com.jfrog.ide.common.nodes.ScaIssueNode;
 import com.jfrog.ide.common.webview.events.WebviewEvent;
 import com.jfrog.ide.common.webview.events.WebviewEvent.Type;
 import com.jfrog.ide.eclipse.log.Logger;
+import com.jfrog.ide.eclipse.ui.webview.events.EventManager;
 
 /**
  * WebviewManager provides a high-level abstraction for managing webview operations.
@@ -34,6 +35,7 @@ import com.jfrog.ide.eclipse.log.Logger;
  */
 public class WebviewManager {
 	private static final Logger log = Logger.getInstance();
+	public final static String WEBVIEW_INDEX_HTML_PATH = "src/main/resources/jfrog-ide-webview/package/build/index.html";
 	
 	// Core components
 	private EventManager eventManager;
