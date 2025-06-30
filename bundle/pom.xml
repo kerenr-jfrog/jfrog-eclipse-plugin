@@ -24,10 +24,19 @@
 			<id>gradle</id>
 			<url>https://repo.gradle.org/gradle/libs-releases</url>
 		</repository>
+		<repository>
+			<id>local-maven</id>
+			<url>C:\Users\Keren Reshef\.m2\repository</url>
+		</repository>
+	
 	</repositories>
 
 	<properties>
-		<ide-plugins-common-version>2.4.4</ide-plugins-common-version>
+		<ide-plugins-common-version>2.4.5</ide-plugins-common-version>
+		<jcef.version>1.0.66</jcef.version>
+		<generic-repo>https://tokyoshiftleft.jfrog.io/artifactory/generic-local/</generic-repo>
+		<webview.version>0.4.2</webview.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<build>
@@ -83,7 +92,53 @@
 					</filesets>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>download-webview</id>
+						<phase>generate-resources</phase>
+			            <configuration>
+			                <target>
+			                    <!-- Download the TGZ file -->
+			                    <get src="https://releases.jfrog.io/artifactory/ide-webview-npm/jfrog-ide-webview/-/jfrog-ide-webview-${webview.version}.tgz"
+			                         dest="${project.basedir}/src/main/resources/webview.tgz"
+			                         usetimestamp="true"/>
+			
+			                    <!-- Extract only 'package/build/**' -->
+			                    <untar src="${project.basedir}/src/main/resources/webview.tgz"
+			                           dest="${project.basedir}/src/main/resources/jfrog-ide-webview"
+			                           compression="gzip">
+			                        <patternset>
+			                            <include name="package/build/**"/>
+			                        </patternset>
+			                        <mapper type="glob" from="package/build/*" to="*"/>
+			                    </untar>
+			
+			                    <!-- Delete the original archive -->
+			                    <delete file="${project.basedir}/src/main/resources/webview.tgz"/>
+			                </target>
+			            </configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+					<execution>
+					<!-- Add fetch for jcef files -->
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>webview/**</include>
+				</includes>
+			</resource>
+		</resources>
 	</build>
 
 </project>
