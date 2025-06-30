@@ -98,9 +98,12 @@ public class ComponentIssueDetails extends ComponentDetails {
         try {
             Bundle bundle = Platform.getBundle("com.jfrog.ide.eclipse"); 
             URL webviewFileUrl = FileLocator.toFileURL(bundle.getEntry(WebviewManager.WEBVIEW_INDEX_HTML_PATH));
+            if (webviewFileUrl == null) {
+            	throw new RuntimeException("Unable to locate Webview file: 'index.html' from plugin bundle");
+            }
             return new File(webviewFileUrl.getPath()).getAbsolutePath();
         } catch (IOException e) {
-            throw new RuntimeException("Unable to locate Webview file: 'index.html' from plugin bundle", e);
+        	throw new RuntimeException("Failed to generate path for webview index.html", e);
         }
 	}
 
