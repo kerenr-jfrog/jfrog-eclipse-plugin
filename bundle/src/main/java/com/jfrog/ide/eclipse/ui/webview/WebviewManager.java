@@ -35,7 +35,7 @@ import com.jfrog.ide.eclipse.ui.webview.events.EventManager;
  */
 public class WebviewManager {
 	private static final Logger log = Logger.getInstance();
-	public final static String WEBVIEW_INDEX_HTML_PATH = "src/main/resources/jfrog-ide-webview/package/build/index.html";
+	public final static String WEBVIEW_INDEX_HTML_PATH = "jfrog-ide-webview/package/build/index.html";
 	
 	// Core components
 	private EventManager eventManager;
